@@ -1,6 +1,7 @@
 package infoshare.library;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Library {
 
@@ -18,7 +19,7 @@ public class Library {
     public boolean isBookAvailable(Book book) {
 
         for (Book bookinRepository : bookRepository) {
-            if (bookinRepository.getAuthor() == book.getAuthor()) {
+            if (Objects.equals(bookinRepository.getAuthor(), book.getAuthor())) {
                 return true;
             }
         }
